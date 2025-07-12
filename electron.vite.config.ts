@@ -14,7 +14,9 @@ export default defineConfig({
   renderer: {
     resolve: {
       alias: {
-        "@renderer": resolve("src/renderer/src")
+        "@renderer": resolve("src/renderer/src"),
+        "@layouts": resolve("src/renderer/src/layouts"),
+        "@views": resolve("src/renderer/src/views")
       }
     },
     plugins: [vue(), tailwindcss(), vueJsx()]
