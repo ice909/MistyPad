@@ -5,7 +5,7 @@ import App from "./App"
 import { createPinia } from "pinia"
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate"
 import "@milkdown/crepe/theme/common/style.css"
-import "@milkdown/crepe/theme/frame.css"
+import "@milkdown/crepe/theme/nord.css"
 
 const app = createApp(App)
 const pinia = createPinia()
