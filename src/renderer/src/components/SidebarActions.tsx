@@ -1,10 +1,12 @@
 import { defineComponent } from "vue"
 import ToolButton from "@renderer/components/Button"
+import { useFileStore } from "@renderer/stores/files"
 
 export default defineComponent({
   name: "SidebarActions",
 
   setup() {
+    const fs = useFileStore()
     const actions = [
       {
         key: "create",
@@ -47,7 +49,7 @@ export default defineComponent({
         title: "打开",
         disabled: false,
         onClick: () => {
-          console.log("Open action clicked")
+          fs.openFile()
         }
       }
     ]
@@ -55,7 +57,12 @@ export default defineComponent({
       <>
         <div class="flex items-center px-2 py-1 gap-2">
           {actions.map((action) => (
-            <ToolButton key={action.key} title={action.title} disabled={action.disabled}>
+            <ToolButton
+              key={action.key}
+              title={action.title}
+              disabled={action.disabled}
+              onClick={action.onClick}
+            >
               {action.icon}
             </ToolButton>
           ))}

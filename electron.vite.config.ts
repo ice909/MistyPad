@@ -6,7 +6,13 @@ import vueJsx from "@vitejs/plugin-vue-jsx"
 
 export default defineConfig({
   main: {
-    plugins: [externalizeDepsPlugin()]
+    plugins: [externalizeDepsPlugin()],
+    resolve: {
+      alias: {
+        "@type": resolve("src/type"),
+        "@utils": resolve("src/utils")
+      }
+    }
   },
   preload: {
     plugins: [externalizeDepsPlugin()]
@@ -14,9 +20,11 @@ export default defineConfig({
   renderer: {
     resolve: {
       alias: {
+        "@type": resolve("src/type"),
         "@renderer": resolve("src/renderer/src"),
         "@layouts": resolve("src/renderer/src/layouts"),
-        "@views": resolve("src/renderer/src/views")
+        "@views": resolve("src/renderer/src/views"),
+        "@utils": resolve("src/utils")
       }
     },
     plugins: [vue(), tailwindcss(), vueJsx()]

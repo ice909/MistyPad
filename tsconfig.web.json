@@ -1,13 +1,21 @@
 {
   "extends": "@electron-toolkit/tsconfig/tsconfig.web.json",
-  "include": ["src/renderer/src/env.d.ts", "src/renderer/src/**/*", "src/preload/*.d.ts"],
+  "include": [
+    "src/renderer/src/env.d.ts",
+    "src/renderer/src/**/*",
+    "src/preload/*.d.ts",
+    "src/type/*",
+    "src/utils/*"
+  ],
   "compilerOptions": {
     "composite": true,
     "baseUrl": ".",
     "paths": {
+      "@type/*": ["src/type/*"],
       "@renderer/*": ["src/renderer/src/*"],
       "@layouts/*": ["src/renderer/src/layouts/*"],
-      "@views/*": ["src/renderer/src/views/*"]
+      "@views/*": ["src/renderer/src/views/*"],
+      "@utils/*": ["src/utils/*"]
     },
     "moduleResolution": "bundler",
     "jsx": "preserve",

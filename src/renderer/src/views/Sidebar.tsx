@@ -1,5 +1,6 @@
 import { defineComponent } from "vue"
 import SidebarActions from "@renderer/components/SidebarActions"
+import FileList from "@renderer/components/FileList"
 
 export default defineComponent({
   name: "Sidebar",
@@ -8,6 +9,7 @@ export default defineComponent({
       <div>
         <SidebarActions />
         <div class="border-t border-base-200"></div>
+        <FileList />
       </div>
     )
   }

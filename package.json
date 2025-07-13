@@ -25,8 +25,10 @@
     "@electron-toolkit/utils": "^4.0.0",
     "@milkdown/crepe": "^7.15.1",
     "@vitejs/plugin-vue-jsx": "^5.0.1",
+    "dayjs": "^1.11.13",
     "electron-updater": "^6.3.9",
     "pinia": "^3.0.3",
+    "pinia-plugin-persistedstate": "^4.4.1",
     "vue": "^3.5.13",
     "vue-router": "4"
   },

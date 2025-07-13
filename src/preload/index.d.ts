@@ -1,8 +1,11 @@
 import { ElectronAPI } from "@electron-toolkit/preload"
+import type { FileMeta } from "../type/index"
 
 declare global {
   interface Window {
     electron: ElectronAPI
-    api: unknown
+    api: {
+      openFile: () => Promise<FileMeta | null>
+    }
   }
 }

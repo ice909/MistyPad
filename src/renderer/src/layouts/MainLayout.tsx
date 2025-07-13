@@ -9,7 +9,7 @@ export default defineComponent({
   setup(_, { slots }) {
     return () => (
       <div class="w-full h-full flex">
-        <div class="w-64 h-full">{slots.sidebar?.()}</div>
+        <div class="w-50 h-full">{slots.sidebar?.()}</div>
         <div class="flex-1">{slots.main?.()}</div>
       </div>
     )
