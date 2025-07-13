@@ -7,6 +7,7 @@ export default defineComponent({
     return () => (
       <div>
         <SidebarActions />
+        <div class="border-t border-base-200"></div>
       </div>
     )
   }

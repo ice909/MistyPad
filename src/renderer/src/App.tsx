@@ -8,14 +8,12 @@ export default defineComponent({
 
   setup() {
     return () => (
-      <div id="app">
-        <MainLayout>
-          {{
-            sidebar: () => <Sidebar />,
-            main: () => <Editor />
-          }}
-        </MainLayout>
-      </div>
+      <MainLayout>
+        {{
+          sidebar: () => <Sidebar />,
+          main: () => <Editor />
+        }}
+      </MainLayout>
     )
   }
 })
