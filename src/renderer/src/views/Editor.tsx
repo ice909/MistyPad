@@ -17,6 +17,13 @@ import javascript from "refractor/javascript"
 import jsx from "refractor/jsx"
 import cpp from "refractor/cpp"
 import typescript from "refractor/typescript"
+import { codeBlockConfig, codeBlockComponent } from "@milkdown/kit/component/code-block"
+// import { languages } from "@renderer/editor/languages"
+import { languages } from "@codemirror/language-data"
+import { oneDark } from "@codemirror/theme-one-dark"
+import { basicSetup } from "codemirror"
+import { defaultKeymap, indentWithTab } from "@codemirror/commands"
+import { keymap } from "@codemirror/view"
 
 export default defineComponent({
   name: "Editor",
@@ -44,6 +51,19 @@ export default defineComponent({
               refactor.register(typescript)
             }
           })
+          ctx.update(codeBlockConfig.key, (defaultConfig) => ({
+            ...defaultConfig,
+            extensions: [keymap.of(defaultKeymap.concat(indentWithTab)), basicSetup, oneDark],
+            languages,
+            expandIcon: "🔽",
+            searchIcon: "🔍",
+            clearSearchIcon: "❌",
+            copyIcon: "📄",
+            copyText: "Copy code",
+            searchPlaceholder: "Find a language...",
+            noResultText: "No language found",
+            previewLabel: "Preview"
+          }))
         })
         .use(commonmark)
         .use(indent)
@@ -53,6 +73,7 @@ export default defineComponent({
         .use(gfm)
         .use(block)
         .use(prism)
+        .use(codeBlockComponent)
       return editorInstance
     })
 
