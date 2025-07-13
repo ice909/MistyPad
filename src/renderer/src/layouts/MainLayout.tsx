@@ -10,6 +10,7 @@ export default defineComponent({
     return () => (
       <div class="w-full h-full flex">
         <div class="w-50 h-full">{slots.sidebar?.()}</div>
+        <div class="divider divider-horizontal m-0"></div>
         <div class="flex-1">{slots.main?.()}</div>
       </div>
     )
